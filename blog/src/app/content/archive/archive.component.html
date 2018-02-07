@@ -1,0 +1,5 @@
+<div class="archive">
+  <ul>
+    <li *ngFor="let archive of archives | async"><a (click)="articleLink(archive)">{{archive.name}}</a></li>
+  </ul>
+</div>

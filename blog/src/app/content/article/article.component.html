@@ -1,0 +1,50 @@
+<div class="article">
+  <div class="title">
+    <h1>{{article | async | meInfo:'title'}}</h1>
+    <p>{{article | async | meInfo:'date' | date:'MMM d, y'}}</p>
+  </div>
+  <div class="content" [innerHtml]="article | async | meInfo:'content'|markdown"></div>
+  <hr>
+<!--   <div class="comment">
+    <h3>雁过留声……</h3>
+    <form #comment="ngForm" (ngSubmit)="commentSubmit(comment.value)">
+      <div ngModelGroup="userInfo">
+        <div>名字 <input ngModel name="username" type="text"></div>
+        <div>Email <input ngModel name="email" type="email"></div>
+      </div>
+      <textarea rows="4" cols="50" ngModel name="content"></textarea>
+      <button type="submit">提交</button>
+    </form>
+  </div> -->
+    <div class="gusetBookForm">
+    <p>雁过留声</p>
+    <form #comment="ngForm" (ngSubmit)="commentSubmit(comment.value)">
+      <div class="user" ngModelGroup="userInfo">
+        <div class="name">
+          <div class="text">名字：</div>
+          <div class="input"><input ngModel name="username" type="text"></div>
+        </div>
+        <div class="email">
+          <div class="text">Email：</div>
+          <div class="input"><input ngModel name="email" type="text"></div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="text">Email：</div>
+        <div class="input"><textarea ngModel  name="content" rows="4"></textarea></div>
+        <div class="submit"><button class="subBtn" type="submit">提交</button></div>
+      </div>
+    </form>
+  </div>
+<!--   <ul class="getGuestbook">
+    <li *ngFor="let getGuestbook of getGuestbooks |async">{{getGuestbook.name}}</li>
+  </ul> -->
+    <div class="gusetBook-Box">
+    <ul class="gusetBookLists">
+      <li class="gusetBook" *ngFor="let getGuestbook of getGuestbooks |async">
+        <p class="user"><span class="name">{{getGuestbook.name}}</span>说：</p>
+        <p class="content">{{getGuestbook.name}}</p>
+      </li>
+    </ul>
+  </div>
+</div>

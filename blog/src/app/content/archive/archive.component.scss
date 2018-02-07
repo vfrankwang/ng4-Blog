@@ -1,0 +1,15 @@
+.archive{
+  font-size: 14px;
+  ul{
+    li{
+      display: inline-block;
+      margin: 5px;
+      a{
+        color: #000;
+        &:hover{
+          text-decoration:underline
+        }
+      }
+    }
+  }
+}

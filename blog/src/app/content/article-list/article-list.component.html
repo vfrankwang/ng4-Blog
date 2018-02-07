@@ -1,0 +1,7 @@
+
+<li *ngFor="let arcitles of arcitles | async " class="article" (click)="arcitleNav(arcitles)">
+  <a>
+    <span class="title">{{arcitles.title}}</span>
+    <span class="time">{{arcitles.date | date:'MMM d, y'}}</span>
+  </a>
+</li>
